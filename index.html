@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Laiza ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #8B4513 0%, #654321 50%, #2F1B14 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            color: rgba(218, 165, 32, 0.4);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .heart:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .heart:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .heart:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .heart:nth-child(7) { left: 70%; animation-delay: 1.5s; }
+        .heart:nth-child(8) { left: 80%; animation-delay: 2.5s; }
+        .heart:nth-child(9) { left: 90%; animation-delay: 3.5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10%, 90% { opacity: 1; }
+            50% { transform: translateY(-10vh) rotate(180deg); }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #F5E6D3;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: rgba(245, 230, 211, 0.9);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        .letter-container {
+            background: rgba(245, 230, 211, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(139, 69, 19, 0.3);
+        }
+        
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+        
+        .letter-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .letter-header h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+        
+        .letter-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2F1B14;
+            text-align: justify;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .letter-content::first-letter {
+            font-size: 3rem;
+            font-family: 'Dancing Script', cursive;
+            color: #8B4513;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            margin-top: 4px;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #8B4513;
+        }
+        
+        .playlist-section {
+            background: rgba(245, 230, 211, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            text-align: center;
+            border: 2px solid rgba(139, 69, 19, 0.3);
+        }
+        
+        .playlist-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #8B4513;
+            margin-bottom: 20px;
+        }
+        
+        .playlist-section p {
+            color: #2F1B14;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .spotify-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #1DB954;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3);
+        }
+        
+        .spotify-button:hover {
+            background: #1ed760;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(29, 185, 84, 0.4);
+        }
+        
+        .spotify-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+
+        
+
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .container { 
+                padding: 10px; 
+                margin: 0 auto;
+            }
+            
+            .header h1 { 
+                font-size: 2.2rem; 
+                line-height: 1.2;
+                margin-bottom: 8px;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .letter-container, .playlist-section { 
+                padding: 20px; 
+                margin-bottom: 20px;
+                border-radius: 15px;
+            }
+            
+            .letter-header h2 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            
+            .letter-content { 
+                font-size: 0.95rem; 
+                line-height: 1.6;
+                text-align: left;
+            }
+            
+            .letter-content::first-letter {
+                font-size: 2.5rem;
+                margin-right: 6px;
+                margin-top: 2px;
+            }
+            
+            .signature {
+                font-size: 1.3rem;
+                margin-top: 25px;
+            }
+            
+            .playlist-section h3 {
+                font-size: 1.7rem;
+                margin-bottom: 15px;
+            }
+            
+            .playlist-section p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            
+            .spotify-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+                gap: 10px;
+            }
+            
+            .spotify-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 8px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .letter-container, .playlist-section {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .letter-header h2 {
+                font-size: 1.7rem;
+            }
+            
+            .letter-content {
+                font-size: 0.9rem;
+            }
+            
+            .letter-content::first-letter {
+                font-size: 2.2rem;
+            }
+            
+            .playlist-section h3 {
+                font-size: 1.5rem;
+            }
+            
+            .spotify-button {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts -->
+    <div class="heart">❤️</div>
+    <div class="heart">💕</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💝</div>
+    <div class="heart">💘</div>
+    <div class="heart">💞</div>
+    <div class="heart">💓</div>
+    <div class="heart">💟</div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Para Laiza ❤️</h1>
+            <p>Uma carta especial do Caio</p>
+        </div>
+        
+        <div class="letter-container">
+            <div class="letter-header">
+                <h2>Minha Querida Laiza</h2>
+                <div style="font-size: 2rem;">💌</div>
+            </div>
+            
+            <div class="letter-content">
+                Laiza meu amor, desde que eu te conheci só penso em você, sim me apaixonei pelo seu sorriso, sua voz, seus trejeitos, seu olhar, sua personalidade. A cada dia que te conheço mais, mais apaixonado eu fico por você.
+                <br><br>
+                Eu sei da sua história e das suas dificuldades. Não sou de fazer promessas vazias e sem significado, vou te provar com o tempo, com ações e gestos.
+                <br><br>
+                <strong style="color: #8B4513; font-size: 1.3rem;">Você aceita ser minha namorada?</strong>
+            </div>
+            
+            <div class="signature">
+                Com todo meu amor,<br>
+                Caio 💕
+            </div>
+        </div>
+        
+        <div class="playlist-section">
+            <h3>🎵 Uma playlist especial para você</h3>
+            <p>Fiz essa playlist pensando em nós e em tudo que sinto por você. Cada música tem um significado especial!</p>
+            <a href="https://open.spotify.com/playlist/17kFkMTiB7WvSt8v5T3Kkh?si=z2AH7gpFRsyv34wFHUG1PA" target="_blank" class="spotify-button">
+                <svg class="spotify-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Ouvir no Spotify
+            </a>
+        </div>
+        
+
+    </div>
+    
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d28f3a6085f616',t:'MTc1NDg2MTA2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
