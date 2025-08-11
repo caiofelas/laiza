@@ -4,369 +4,398 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Laiza ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluindo a fonte Inter para o texto principal e Dancing Script para títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        /* Estilos gerais e animações de coração */
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #8B4513 0%, #654321 50%, #2F1B14 100%);
+            font-family: 'Inter', sans-serif;
+            background-color: #2F1B14;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            color: #2F1B14;
         }
-        
-        /* Floating hearts animation */
+        .dancing-script { font-family: 'Dancing Script', cursive; }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Animação dos corações flutuantes */
         .heart {
             position: absolute;
             color: rgba(218, 165, 32, 0.4);
             font-size: 20px;
-            animation: float 6s ease-in-out infinite;
+            animation: float 10s ease-in-out infinite;
             pointer-events: none;
+            top: -20px;
+            z-index: 1;
         }
-        
-        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
-        .heart:nth-child(3) { left: 30%; animation-delay: 2s; }
-        .heart:nth-child(4) { left: 40%; animation-delay: 3s; }
-        .heart:nth-child(5) { left: 50%; animation-delay: 4s; }
-        .heart:nth-child(6) { left: 60%; animation-delay: 5s; }
-        .heart:nth-child(7) { left: 70%; animation-delay: 1.5s; }
-        .heart:nth-child(8) { left: 80%; animation-delay: 2.5s; }
-        .heart:nth-child(9) { left: 90%; animation-delay: 3.5s; }
-        
         @keyframes float {
-            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10%, 90% { opacity: 1; }
-            50% { transform: translateY(-10vh) rotate(180deg); }
+            100% { transform: translateY(-5vh) rotate(360deg); opacity: 0; }
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .header h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: #F5E6D3;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            color: rgba(245, 230, 211, 0.9);
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-        
-        .letter-container {
-            background: rgba(245, 230, 211, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.3s both;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(139, 69, 19, 0.3);
-        }
-        
-        .letter-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-        }
-        
-        .letter-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .letter-header h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            color: #8B4513;
-            margin-bottom: 10px;
-        }
-        
-        .letter-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #2F1B14;
-            text-align: justify;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .letter-content::first-letter {
-            font-size: 3rem;
-            font-family: 'Dancing Script', cursive;
-            color: #8B4513;
-            float: left;
-            line-height: 1;
-            margin-right: 8px;
-            margin-top: 4px;
-        }
-        
-        .signature {
-            text-align: right;
-            margin-top: 30px;
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5rem;
-            color: #8B4513;
-        }
-        
-        .playlist-section {
-            background: rgba(245, 230, 211, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-            text-align: center;
-            border: 2px solid rgba(139, 69, 19, 0.3);
-        }
-        
-        .playlist-section h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            color: #8B4513;
-            margin-bottom: 20px;
-        }
-        
-        .playlist-section p {
-            color: #2F1B14;
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-        }
-        
-        .spotify-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #1DB954;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3);
-        }
-        
-        .spotify-button:hover {
-            background: #1ed760;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(29, 185, 84, 0.4);
-        }
-        
-        .spotify-icon {
-            width: 24px;
-            height: 24px;
-        }
-        
 
-        
-
-        
+        /* Animações de entrada */
+        .fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        @media (max-width: 768px) {
-            .container { 
-                padding: 10px; 
-                margin: 0 auto;
+        /* Estilo para a galeria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Modal da Galeria */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80vw;
+            max-height: 80vh;
+            border-radius: 1rem;
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        /* Estilo para a Linha do Tempo */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #F5E6D3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left { left: 0; }
+        .timeline-container.right { left: 50%; }
+        
+        .timeline-container::after {
+            content: '❤️';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -15px;
+            top: 25px;
+            z-index: 1;
+            font-size: 20px;
+        }
+        .timeline-container.right::after {
+            left: -10px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: rgba(245, 230, 211, 0.9);
+            position: relative;
+            border-radius: 1rem;
+            color: #2F1B14;
+        }
+        /* Responsividade da Linha do Tempo */
+        @media screen and (max-width: 768px) {
+            .timeline::after { left: 31px; }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
             }
-            
-            .header h1 { 
-                font-size: 2.2rem; 
-                line-height: 1.2;
-                margin-bottom: 8px;
-            }
-            
-            .header p {
-                font-size: 1rem;
-            }
-            
-            .letter-container, .playlist-section { 
-                padding: 20px; 
-                margin-bottom: 20px;
-                border-radius: 15px;
-            }
-            
-            .letter-header h2 {
-                font-size: 2rem;
-                margin-bottom: 15px;
-            }
-            
-            .letter-content { 
-                font-size: 0.95rem; 
-                line-height: 1.6;
-                text-align: left;
-            }
-            
-            .letter-content::first-letter {
-                font-size: 2.5rem;
-                margin-right: 6px;
-                margin-top: 2px;
-            }
-            
-            .signature {
-                font-size: 1.3rem;
-                margin-top: 25px;
-            }
-            
-            .playlist-section h3 {
-                font-size: 1.7rem;
-                margin-bottom: 15px;
-            }
-            
-            .playlist-section p {
-                font-size: 1rem;
-                margin-bottom: 20px;
-            }
-            
-            .spotify-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-                gap: 10px;
-            }
-            
-            .spotify-icon {
-                width: 20px;
-                height: 20px;
+            .timeline-container.right { left: 0%; }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 18px;
             }
         }
+
+        /* Estilos e animações para a carta inicial */
+        #initial-letter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #2F1B14;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1000;
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .letter-content {
+            background-color: #F5E6D3;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transform: scale(0.8);
+            transition: transform 0.5s ease-in-out;
+        }
+        .letter-content:hover {
+            transform: scale(0.85);
+        }
+        .seal {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+        }
         
-        @media (max-width: 480px) {
-            .container {
-                padding: 8px;
-            }
-            
-            .header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .letter-container, .playlist-section {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            
-            .letter-header h2 {
-                font-size: 1.7rem;
-            }
-            
-            .letter-content {
-                font-size: 0.9rem;
-            }
-            
-            .letter-content::first-letter {
-                font-size: 2.2rem;
-            }
-            
-            .playlist-section h3 {
-                font-size: 1.5rem;
-            }
-            
-            .spotify-button {
-                padding: 10px 20px;
-                font-size: 0.95rem;
-                width: 100%;
-                max-width: 280px;
-            }
+        /* Classe para esconder a carta e revelar o conteúdo */
+        .fade-out {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.8);
         }
     </style>
 </head>
 <body>
-    <!-- Floating hearts -->
-    <div class="heart">❤️</div>
-    <div class="heart">💕</div>
-    <div class="heart">💖</div>
-    <div class="heart">💗</div>
-    <div class="heart">💝</div>
-    <div class="heart">💘</div>
-    <div class="heart">💞</div>
-    <div class="heart">💓</div>
-    <div class="heart">💟</div>
-    
-    <div class="container">
-        <div class="header">
-            <h1>Para Laiza ❤️</h1>
-            <p>Uma carta especial do Caio</p>
+    <!-- Container da carta inicial que esconde o restante da página -->
+    <div id="initial-letter" class="fade-in-down">
+        <div class="letter-content">
+            <span class="seal">❤️</span>
+            <h2 class="dancing-script text-4xl md:text-5xl text-[#8B4513] mb-4">Para: Laiza</h2>
+            <p class="text-xl text-[#654321]">De: Caio</p>
+            <p class="mt-4 text-base text-gray-500 italic">Clique para abrir a carta...</p>
         </div>
-        
-        <div class="letter-container">
-            <div class="letter-header">
-                <h2>Minha Querida Laiza</h2>
-                <div style="font-size: 2rem;">💌</div>
-            </div>
-            
-            <div class="letter-content">
-                Laiza meu amor, desde que eu te conheci só penso em você, sim me apaixonei pelo seu sorriso, sua voz, seus trejeitos, seu olhar, sua personalidade. A cada dia que te conheço mais, mais apaixonado eu fico por você.
-                <br><br>
-                Eu sei da sua história e das suas dificuldades. Não sou de fazer promessas vazias e sem significado, vou te provar com o tempo, com ações e gestos.
-                <br><br>
-                <strong style="color: #8B4513; font-size: 1.3rem;">Você aceita ser minha namorada?</strong>
-            </div>
-            
-            <div class="signature">
-                Com todo meu amor,<br>
-                Caio 💕
-            </div>
-        </div>
-        
-        <div class="playlist-section">
-            <h3>🎵 Uma playlist especial para você</h3>
-            <p>Fiz essa playlist pensando em nós e em tudo que sinto por você. Cada música tem um significado especial!</p>
-            <a href="https://open.spotify.com/playlist/17kFkMTiB7WvSt8v5T3Kkh?si=z2AH7gpFRsyv34wFHUG1PA" target="_blank" class="spotify-button">
-                <svg class="spotify-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                </svg>
-                Ouvir no Spotify
-            </a>
-        </div>
-        
-
     </div>
-    
 
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d28f3a6085f616',t:'MTc1NDg2MTA2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <!-- Wrapper para todo o conteúdo da página, inicialmente escondido -->
+    <div id="main-content" class="hidden">
+        <div class="bg-[#2F1B14] min-h-screen">
+            <!-- Corações flutuantes -->
+            <div id="hearts-container"></div>
+        
+            <div class="container mx-auto p-4 md:p-8 max-w-4xl relative z-10">
+                <header class="text-center mb-10 fade-in-down">
+                    <h1 class="dancing-script text-5xl md:text-6xl text-[#F5E6D3] text-shadow">Para Laiza ❤️</h1>
+                    <p class="text-lg text-[#F5E6D3]/90 mt-2">Uma carta especial do Caio</p>
+                </header>
+                
+                <!-- Player do Audio.com com novo estilo -->
+                <div id="audio-player-container" class="max-w-2xl mx-auto my-8 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-sm border-2 border-[#8B4513]/30 fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="bg-[#F5E6D3]/95 p-4 text-center rounded-t-2xl">
+                        <h3 class="dancing-script text-3xl text-[#8B4513] mb-2">🎵 Nossa Música</h3>
+                        <p class="text-sm text-gray-700">Por favor, clique no "play" para a música tocar!</p>
+                    </div>
+                    <div class="w-full">
+                        <iframe id="audio-iframe" src="https://audio.com/embed/audio/1831023770404705?theme=light"
+                            style="display:block; border: none; height: 204px; width: 100%;"></iframe>
+                        <a href='https://audio.com/john-doe-1831023748327579' class="text-center block text-white/70 text-sm font-sans leading-4 mt-2 overflow-hidden whitespace-nowrap text-ellipsis">@john-doe-1831023748327579</a>
+                    </div>
+                </div>
+
+                <!-- Container da Carta -->
+                <div id="letter-container" class="bg-[#F5E6D3]/95 rounded-2xl p-6 md:p-10 shadow-2xl mb-10 backdrop-blur-sm border-2 border-[#8B4513]/30 fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="text-center mb-6">
+                        <h2 class="dancing-script text-4xl text-[#8B4513]">Minha Querida Laiza</h2>
+                        <div class="text-4xl mt-2">💌</div>
+                    </div>
+                    <div class="text-base md:text-lg leading-relaxed text-justify mb-6">
+                        Laiza meu amor, desde que eu te conheci só penso em você, sim me apaixonei pelo seu sorriso, sua voz, seus trejeitos, seu olhar, sua personalidade. A cada dia que te conheço mais, mais apaixonado eu fico por você.
+                        <br><br>
+                        Eu sei da sua história e das suas dificuldades. Não sou de fazer promessas vazias e sem significado, vou te provar com o tempo, com ações e gestos.
+                        <br><br>
+                        <strong class="block text-center text-[#8B4513] text-2xl my-4">Você aceita ser minha namorada?</strong>
+                    </div>
+                    <!-- Botões de Resposta -->
+                    <div id="response-buttons" class="flex justify-center items-center gap-4 mt-6">
+                        <button id="yes-button" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                            Sim! ❤️
+                        </button>
+                        <button id="no-button" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                            Não...
+                        </button>
+                    </div>
+                    <!-- Mensagem de celebração -->
+                    <div id="celebration" class="hidden text-center mt-8 p-4 bg-rose-100 border-2 border-rose-300 rounded-2xl">
+                        <p class="text-2xl dancing-script text-rose-600">Eu te amo! ❤️ Mal posso esperar para começarmos nossa história juntos!</p>
+                    </div>
+                    <div class="text-right mt-8 dancing-script text-2xl text-[#8B4513]">
+                        Com todo meu amor,<br> Caio 💕
+                    </div>
+                </div>
+                
+                <!-- Seção da Galeria -->
+                <section id="gallery-section" class="bg-[#F5E6D3]/95 rounded-2xl p-6 md:p-10 shadow-2xl mb-10 backdrop-blur-sm border-2 border-[#8B4513]/30 fade-in-up" style="animation-delay: 0.6s;">
+                    <h3 class="dancing-script text-4xl text-[#8B4513] text-center mb-6">Nossos Momentos Especiais 📸</h3>
+                    <div class="gallery-grid">
+                        <!-- Adicione suas fotos aqui! Troque os links placehold.co -->
+                        <div class="gallery-item"><img src="https://placehold.co/400x400/a5673f/FFFFFF?text=Nossa+Foto+1" alt="Descrição da foto 1"></div>
+                        <div class="gallery-item"><img src="https://placehold.co/400x400/b5764f/FFFFFF?text=Nossa+Foto+2" alt="Descrição da foto 2"></div>
+                        <div class="gallery-item"><img src="https://placehold.co/400x400/c5855f/FFFFFF?text=Nossa+Foto+3" alt="Descrição da foto 3"></div>
+                        <div class="gallery-item"><img src="https://placehold.co/400x400/d5946f/FFFFFF?text=Nossa+Foto+4" alt="Descrição da foto 4"></div>
+                    </div>
+                </section>
+
+                <!-- Modal para Visualização da Imagem -->
+                <div id="image-modal" class="modal hidden">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="modal-image">
+                </div>
+
+                <!-- Seção da Linha do Tempo -->
+                <section id="timeline-section" class="py-10 fade-in-up" style="animation-delay: 0.9s;">
+                    <h3 class="dancing-script text-4xl md:text-5xl text-[#F5E6D3] text-center mb-12">Nossa Linha do Tempo ⏳</h3>
+                    <div class="timeline">
+                        <!-- Item da Linha do Tempo (Exemplo) -->
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h4 class="font-bold text-xl mb-1 text-[#654321]">Onde Tudo Começou</h4>
+                                <p class="text-sm text-gray-600 mb-2">12 de Agosto de 2025</p>
+                                <p>O dia em que nossos caminhos se cruzaram e uma nova história começou a ser escrita.</p>
+                            </div>
+                        </div>
+                        <!-- Item da Linha do Tempo (Exemplo) -->
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h4 class="font-bold text-xl mb-1 text-[#654321]">O Pedido Especial</h4>
+                                <p class="text-sm text-gray-600 mb-2">12 de Agosto de 2025</p>
+                                <p>O dia em que te pedi para ser minha companheira de vida. Este site foi feito com todo o meu amor para você.</p>
+                            </div>
+                        </div>
+                        <!-- Adicione mais eventos aqui -->
+                        <div id="timeline-events-container"></div>
+                    </div>
+                </section>
+
+                <!-- Seção da Playlist -->
+                <div class="bg-[#F5E6D3]/95 rounded-2xl p-6 md:p-10 shadow-2xl backdrop-blur-sm border-2 border-[#8B4513]/30 text-center fade-in-up" style="animation-delay: 1.2s;">
+                    <h3 class="dancing-script text-3xl md:text-4xl text-[#8B4513] mb-4">🎵 Uma Playlist Para Nós</h3>
+                    <p class="mb-6 text-base md:text-lg">Fiz essa playlist pensando em nós. Cada música tem um significado especial!</p>
+                    <a href="https://open.spotify.com/playlist/17kFkMTiB7WvSt8v5T3Kkh?si=z2AH7gpFRsyv34wFHUG1PA" target="_blank" class="inline-flex items-center gap-3 bg-[#1DB954] text-white py-3 px-6 rounded-full font-bold shadow-lg hover:bg-[#1ed760] transition-all transform hover:scale-105">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                        Ouvir no Spotify
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Lógica dos Corações Flutuantes ---
+            const heartsContainer = document.getElementById('hearts-container');
+            const hearts = ['❤️', '💕', '💖', '💗', '💝', '💘', '💞', '💓', '💟'];
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDuration = `${Math.random() * 5 + 5}s`; // Duração entre 5s e 10s
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                heartsContainer.appendChild(heart);
+            }
+
+            // --- Lógica da Carta Inicial e Abertura ---
+            const initialLetter = document.getElementById('initial-letter');
+            const mainContent = document.getElementById('main-content');
+            
+            initialLetter.addEventListener('click', () => {
+                // Adiciona a classe para animar o desaparecimento da carta
+                initialLetter.classList.add('fade-out');
+
+                // Após a animação, remove a carta e mostra o conteúdo principal
+                setTimeout(() => {
+                    initialLetter.style.display = 'none';
+                    mainContent.classList.remove('hidden');
+                }, 1000); // O tempo precisa ser o mesmo da animação de 'fade-out'
+            });
+
+            // --- Lógica dos Botões de Resposta ---
+            const yesButton = document.getElementById('yes-button');
+            const celebrationMessage = document.getElementById('celebration');
+            const responseButtons = document.getElementById('response-buttons');
+            
+            // Lógica para o botão "Sim! ❤️"
+            yesButton.addEventListener('click', () => {
+                celebrationMessage.classList.remove('hidden');
+                responseButtons.classList.add('hidden');
+            });
+            
+            // --- Lógica da Galeria Modal ---
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+            const closeModal = document.querySelector('.close-modal');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.classList.remove('hidden');
+                    modalImg.src = this.src;
+                });
+            });
+
+            const close = () => {
+                modal.classList.add('hidden');
+            }
+
+            closeModal.addEventListener('click', close);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    close();
+                }
+            });
+        });
+    </script>
+</body>
 </html>
